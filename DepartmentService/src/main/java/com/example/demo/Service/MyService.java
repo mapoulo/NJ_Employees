@@ -31,9 +31,8 @@ public class MyService {
 		return repo.findDepartmentById(id);
 	}
 	
-	public String deleteDepartment(int id) {
+	public void deleteDepartment(int id) {
 		repo.deleteById(id);
-		return "Department deleted successfuly";
 	}
 
 }
