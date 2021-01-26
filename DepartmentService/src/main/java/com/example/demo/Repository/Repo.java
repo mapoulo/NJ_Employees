@@ -6,4 +6,6 @@ import com.example.demo.Models.Department;
 
 public interface Repo extends CrudRepository<Department, Integer> {
 
+	Department findDepartmentById(int id);
+
 }
