@@ -13,10 +13,12 @@ import lombok.Data;
 @AllArgsConstructor
 public class Department {
 	
+	public Department() {}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int DepartmentId;
+	private int id;
 	
-	private String DepartmentName;
+	private String name;
 
 }

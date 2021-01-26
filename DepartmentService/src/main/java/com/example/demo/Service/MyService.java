@@ -17,8 +17,8 @@ public class MyService {
 	private Repo repo;
 	
 	
-	public Department saveDepartment(Department department) {
-		return repo.save(department);
+	public void saveDepartment(Department department) {
+		 repo.save(department);
 	}
 	
 	public List<Department>  getAllDepartment(){
