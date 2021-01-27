@@ -48,7 +48,7 @@ public class Controller {
 		log.info("Insid the getEmployeeById method of the EmployeeService controller ");
         Employee_Department employee_Department = new Employee_Department();
         Employee employee = service.findEmployeeById(id);
-        Department department = restTemplate.getForObject("http://localhost:8090/departments/"+id, Department.class);;
+        Department department = restTemplate.getForObject("http://DEPARTMENT_SERVICE/departments/"+id, Department.class);;
         employee_Department.setDepartment(department);
         employee_Department.setEmployee(employee);        
         return employee_Department;
