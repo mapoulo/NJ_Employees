@@ -1,6 +1,8 @@
+server:  port: 8090
+
 spring:
   application:
-    name: DEPARTMENT_SERVICE
+    name: DEPARTMENT-SERVICE  datasource:    url: jdbc:mysql://localhost:3306/NJ_Employees_departments?createDatabaseIfNotExist=true    driver-class-name: com.mysql.cj.jdbc.Driver    password: NkweMapoulo@1    username: root  jpa:    hibernate:      ddl-auto: update
     
 eureka:  client:    fetch-registry: true
     register-with-eureka: true

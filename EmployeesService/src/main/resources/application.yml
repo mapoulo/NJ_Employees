@@ -1,6 +1,18 @@
+server:
+  port: 8091
+
+
 spring:
   application:
-    name: EMPLOYEE_SERVICE
+    name: EMPLOYEE-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/NJ_Employees_EMPLOYEES?createDatabaseIfNotExist=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: NkweMapoulo@1
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
     
 eureka:
   client:
