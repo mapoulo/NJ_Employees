@@ -15,12 +15,12 @@ eureka:
 spring:
   application:
     name: API_GATEWAY
-  cloud:    gateway:      routes:      - id: EMPLOYEE_SERVICE
-        uri:          lb://EMPLOYEE_SERVICE
+  cloud:    gateway:      routes:      - id: EMPLOYEE-SERVICE
+        uri:          lb://EMPLOYEE-SERVICE
         predicates:        - Path=/employees/**
-      - id: DEPARTMENT_SERVICE
+      - id: DEPARTMENT-SERVICE
         uri:
-          lb://DEPARTMENT_SERVICE
+          lb://DEPARTMENT-SERVICE
         predicates:
         - Path=/departments/**     
     
