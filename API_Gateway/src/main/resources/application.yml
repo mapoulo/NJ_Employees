@@ -1,41 +1,9 @@
 server:
   port: 9191
   
-  
-eureka:
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
  
 
-spring:
-  application:
-    name: API_GATEWAY
-  cloud:    gateway:      routes:      - id: EMPLOYEE-SERVICE
-        uri:          lb://EMPLOYEE-SERVICE
-        predicates:        - Path=/employees/**
-        filters:
-        - name: CircuitBreaker
-          args:
-            name: EMPLOYEE-SERVICE
-            fallbackUri: forward:/employee
-      - id: DEPARTMENT-SERVICE
-        uri:
-          lb://DEPARTMENT-SERVICE
-        predicates:
-        - Path=/departments/**    
-        filters:
-        - name: CircuitBreaker
-          args:
-            name: DEPARTMENT-SERVICE
-            fallbackUri: forward:/department
-   
-management:  endpoints:    web:      exposure:        include:        - "*"  
-   
+
              
              
              

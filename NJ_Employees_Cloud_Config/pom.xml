@@ -9,50 +9,24 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>EmployeesService</artifactId>
+	<artifactId>NJ_Employees_Cloud_Config</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EmployeesService</name>
+	<name>NJ_Employees_Cloud_Config</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-				<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
-		
+		<spring-cloud.version>Hoxton.SR9</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
-<dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-config</artifactId>
-</dependency>
-		
 
-			<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		
-		
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -65,8 +39,7 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-
-<dependencyManagement>
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -77,27 +50,18 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	
 	
-	
-<repositories>
+	<repositories>
     <repository>
         <id>spring-releases</id>
         <name>Spring Releases</name>
@@ -111,6 +75,5 @@
         <url>https://repo.spring.io/libs-release</url>
     </pluginRepository>
 </pluginRepositories>
-	
 
 </project>

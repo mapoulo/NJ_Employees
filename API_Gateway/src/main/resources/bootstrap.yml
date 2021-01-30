@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: API_GATEWAY
+  cloud:
+   config:
+      enabled: true
+      uri:
+      - http://localhost:8000  
+   gateway:
+      routes:
+      - id: EMPLOYEE-SERVICE
+        uri:
+          lb://EMPLOYEE-SERVICE
+        predicates:
+        - Path=/employees/**
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: EMPLOYEE-SERVICE
+            fallbackUri: forward:/employee
+      - id: DEPARTMENT-SERVICE
+        uri:
+          lb://DEPARTMENT-SERVICE
+        predicates:
+        - Path=/departments/**    
+        filters:
+        - name: CircuitBreaker
+          args:
+            name: DEPARTMENT-SERVICE
+            fallbackUri: forward:/department
+   
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "*"  
+   
