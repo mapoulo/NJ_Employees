@@ -34,7 +34,7 @@ spring:
             name: DEPARTMENT-SERVICE
             fallbackUri: forward:/department
    
-   
+management:  endpoints:    web:      exposure:        include:        - "*"  
    
              
              
